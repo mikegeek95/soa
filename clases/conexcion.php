@@ -16,10 +16,10 @@ class MySQL
 	 public function MySQL()
 	 {  
 	 	$this->se=new Sesion();
-	 	$this->servidor="localhost";
-	 	$this->usuario="root";
-	 	$this->contrase="";
-	 	$this->db="servicio";
+	 	$this->servidor="ec2-52-71-69-66.compute-1.amazonaws.com";
+	 	$this->usuario="xbyvdleqybkrbe";
+	 	$this->contrase="ea076ba1e3974108109a108c6a3d315dd5b7a7b40001956e8210c9a98715be3f";
+	 	$this->db="d79jfb5dkcr3q8";
 
 	
 	 	if(!isset($this->conexion))
