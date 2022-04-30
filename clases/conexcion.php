@@ -17,10 +17,10 @@
         //creación de la función para cargar los valores de la conexión.
         public function cargarValores(){
 			
-			 $this->host='ec2-52-71-69-66.compute-1.amazonaws.com';
-            $this->db='d79jfb5dkcr3q8';
-            $this->user='xbyvdleqybkrbe';
-            $this->pass='ea076ba1e3974108109a108c6a3d315dd5b7a7b40001956e8210c9a98715be3f';
+			 $this->host='ec2-34-194-73-236.compute-1.amazonaws.com';
+            $this->db='d5b9ruct8slt0f';
+            $this->user='hpnxskrqgkmifn';
+            $this->pass='45b3ca0d827e9532658dfb172e7eac60e79df2ba87d259da54481ca27244baec';
             $this->conexion="host='$this->host' dbname='$this->db' user='$this->user' password='$this->pass' ";
             }
  
