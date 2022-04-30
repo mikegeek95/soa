@@ -6,6 +6,7 @@ require_once('clases/class.Funciones.php');
 try
 {
 	$db= new MySQL();
+	$db->conectar();
 	$f = new Funciones();	
 	
 	$db->begin();
@@ -17,6 +18,7 @@ try
 	//echo($query);
 	
 	$result=$db->consulta($query);
+	echo ($result);
 	$result_num=$db->num_rows($result);
 	$result_row=$db->fetch_assoc($result);
 	

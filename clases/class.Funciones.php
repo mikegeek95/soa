@@ -512,3 +512,6 @@ function imprimir_cadena_utf8($cadena){
 	
 	
 }
+
+
+
