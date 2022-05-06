@@ -6,19 +6,18 @@ require_once('clases/class.Funciones.php');
 try
 {
 	$db= new MySQL();
-	$db->conectar();
 	$f = new Funciones();	
 	
 	$db->begin();
 	
 	$id = $_GET['id'];
 	
-	$query =("select os.nombre, os.direccion, os.precio, os.horario_apertura, os.horario_cierre, t.nombre as tipo from lugaresocio as os, tipo as t where t.idtipo=os.tipo and os.pueblo=$id");
+	$query =("select os.nombre, os.direccion, os.precio, os.apertura, os.cierre, t.nombre as tipo from lugaresdeocio as os, tipo as t where t.idtipo=os.tipodelugar and os.idpueblomagico=$id");
 	
 	//echo($query);
 	
 	$result=$db->consulta($query);
-	echo ($result);
+	
 	$result_num=$db->num_rows($result);
 	$result_row=$db->fetch_assoc($result);
 	
