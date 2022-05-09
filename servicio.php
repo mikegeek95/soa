@@ -10,9 +10,19 @@ try
 	
 	$db->begin();
 	
-	$id = $_GET['id'];
+	$id = (isset($_POST['id']))? $_POST['id'] : "";
+	$v_estado = (isset($_POST['v_estado']))? $_POST['v_estado'] : "0";
+	$v_tipo = (isset($_POST['v_tipo']))? $_POST['v_tipo'] : "0";
+	$v_nombre = (isset($_POST['v_nombre']))? $_POST['v_nombre'] : "";
 	
-	$query =("select os.nombre, os.direccion, os.precio, os.apertura, os.cierre, t.nombre as tipo from lugaresdeocio as os, tipo as t where t.idtipo=os.tipodelugar and os.idpueblomagico=$id");
+	$query ="select os.IdLugarOcio, os.nombre, os.direccion, os.Descripcion, os.precio, os.apertura, os.cierre, t.nombre as tipo, pm.estado, pm.nombre as pueblomagico from lugaresdeocio as os, tipo as t , pueblos_magicos as pm where t.idtipo=os.tipodelugar and pm.idPueblos_Magicos=os.IdPuebloMagico ";
+	
+	$query .= ($id != '') ? " and os.idpueblomagico=$id ":" ";
+	$query .= ($v_estado != '0') ? " and pm.estado like '$v_estado' ":" ";
+	$query .= ($v_tipo != '0') ? " and t.idtipo=$v_tipo ":" ";
+	$query .= ($v_nombre != '') ? " and os.nombre like '$v_nombre' ":" ";
+	
+
 	
 	//echo($query);
 	
@@ -25,7 +35,7 @@ try
 	{
 		do{
 			
-			$data['LugaresOsico'][] = $result_row;
+			$data[] = $result_row;
 			
 
 			
@@ -33,7 +43,7 @@ try
 	}
 	
 	else {
-		$data['LugaresOsio'][] = $result_row;
+		$data['LugaresOsio'][] ="";
 	}
 	
 	echo (json_encode($data));
