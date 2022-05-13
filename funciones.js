@@ -66,27 +66,62 @@ function buscar(formulario)
 
 				   for (var i in msj) {
 
-						resultado += ("<div class='col-lg-4 col-md-6 portfolio-item filter-app'>");
-						resultado += ('<div class="border">');
-						resultado += ('      <img src="assets/img/lo/'+msj[i].IdLugarOcio+'.jpg" class="img-fluid" alt="">');
-						resultado += ('     <div class="caption">');
-						resultado += ('       <h3>'+msj[i].nombre+'</h3>');
-						resultado += ('       <p><b>Estado:</b> '+msj[i].estado+'</p>');
-						resultado += ('       <p><b>Tipo:</b> '+msj[i].tipo+'</p>');
-						resultado += ('       <p><b>Direccion:</b> '+msj[i].direccion+'</p>');
-						resultado += ('       <p><b>Costo:</b> '+msj[i].precio+'</p>');
-						resultado += ('       <p><b>Apertura: </b>'+msj[i].apertura+'</p>');
-						resultado += ('       <p><b>Cierre:</b> '+msj[i].cierre+'</p>');
-						resultado += ('       <p><b>Descripcion:</b> '+msj[i].Descripcion+'</p>');
+
+
+						//resultado += ('       <p><b>Apertura: </b>'+msj[i].apertura+'</p>');
+						//resultado += ('       <p><b>Cierre:</b> '+msj[i].cierre+'</p>');
+
+
+						resultado += (' <div class="col-12 ">');
+						resultado += ('       <div class="card border-0 padding-5" style="border: 5px solid red;" >');
+						resultado += ('         <div class="row g-0">');
+						resultado += ('           <div class="col-md-4">');
+						resultado += ('             <img src="assets/img/lo/'+msj[i].IdLugarOcio+'.jpg" class="img-fluid img-thumbnail" alt="...">');
+						resultado += ('          </div>');
+						resultado += ('         <div class="col-md-8">');
+						resultado += ('           <div class="card-body b-0">');
+						resultado += ('               <h2 class="card-title"><strong>'+msj[i].nombre+'</strong></h5>');
+						resultado += ('               <ol class="list-group border-0 padding-0">');
+						resultado += ('                 <li class="list-group-item border-0  padding-0"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">');
+						resultado += ('                 <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>');
+						resultado += ('                 </svg><strong > Estado:  </strong>'+msj[i].estado+'</li>');
+						resultado += ('                 <li class="list-group-item border-0  padding-0"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">');
+						resultado += ('                 <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>');
+						resultado += ('                 </svg><strong > Pueblo:  </strong>'+msj[i].pueblomagico+'</li>');
+						resultado += ('                 <li class="list-group-item border-0"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">');
+						resultado += ('                <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>');
+						resultado += ('                </svg> <strong > Direccion:  </strong>'+msj[i].direccion+'</li>');
+						resultado += ('                 <li class="list-group-item border-0"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">');
+						resultado += ('                <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>');
+						resultado += ('                </svg> <strong > Tipo:  </strong>'+msj[i].tipo+'</li>');
+
+						resultado += ('                 <li class="list-group-item border-0"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">');
+						resultado += ('                 <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>');
+						resultado += ('                 </svg><strong > Costo entrada:  </strong>'+msj[i].precio+'</li>');
+						resultado += ('                 <li class="list-group-item border-0"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">');
+						resultado += ('                 <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>');
+						resultado += ('                 </svg><strong > H. Apertura:  </strong>'+msj[i].apertura+'</li>');
+						resultado += ('                 <li class="list-group-item border-0"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">');
+						resultado += ('                 <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>');
+						resultado += ('                 </svg><strong > H. Cierre:  </strong>'+msj[i].cierre+'</li>');
+						resultado += ('               </ol>');
+						resultado += ('           </div>');
+						resultado += ('          <div class="card-footer bg-transparent border-0 ">');
+						resultado += ('            <p class="card-text"><strong>Descripcion: </strong>'+msj[i].Descripcion+'</p>');
+						resultado += ('          </div>');
+						resultado += ('           </div> ');  
+						resultado += ('          </div>');
 						resultado += ('      </div>');
-						resultado += ('    </div>');
-						resultado += ('</div>');
+						resultado += ('   <hr class="mt-5">');
+						resultado += ('  </div>');
 					}
 				}else{
 					resultado ="<div align='center' class='mostrar portfolio-container'>No hay resultados</div>";
 				}
 
 					$('#portfolio-container').html(resultado);
+
+				
 				  
 			  },
 			  error:function(XMLHttpRequest, textStatus, errorThrown){

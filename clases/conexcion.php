@@ -16,18 +16,18 @@ class MySQL
 	 public function MySQL()
 	 {  
 		 //vribles de entorno local
-	 	//$this->se=new Sesion();
-	 	//$this->servidor="localhost";
-	 	//$this->usuario="root";
-	 	//$this->contrase="";
-	 	//$this->db="servicio";
+	 	$this->se=new Sesion();
+	 	$this->servidor="localhost";
+	 	$this->usuario="root";
+	 	$this->contrase="";
+	 	$this->db="servicio";
 		 
 		 //variables de entorno dominio
-		$this->se=new Sesion();
-	 	$this->servidor="localhost";
-	 	$this->usuario="okjovoyv_soalo";
-	 	$this->contrase="ob5KA9WsyW$";
-	 	$this->db="okjovoyv_soalo";
+		//$this->se=new Sesion();
+	 	//$this->servidor="localhost";
+	 	//$this->usuario="okjovoyv_soalo";
+	 	//$this->contrase="ob5KA9WsyW$";
+	 	//$this->db="okjovoyv_soalo";
 
 	
 	 	if(!isset($this->conexion))
