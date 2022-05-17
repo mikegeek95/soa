@@ -50,6 +50,7 @@ function buscar(formulario)
 	
 	var cadena = ObtenerDatosFormulario(formulario);
 	var resultado ="";
+	console.log(cadena);
 
 	$("#portfolio-container").html('<div align="center" class="mostrar"><img src="assets/img/loader.gif" alt="" /><br />Cargando...</div>');	
 	
@@ -100,10 +101,10 @@ function buscar(formulario)
 						resultado += ('                 </svg><strong > Costo entrada:  </strong>'+msj[i].precio+'</li>');
 						resultado += ('                 <li class="list-group-item border-0"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">');
 						resultado += ('                 <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>');
-						resultado += ('                 </svg><strong > H. Apertura:  </strong>'+msj[i].apertura+'</li>');
+						resultado += ('                 </svg><strong > H. Apertura:  </strong>'+msj[i].apertura+' Hrs.</li>');
 						resultado += ('                 <li class="list-group-item border-0"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">');
 						resultado += ('                 <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>');
-						resultado += ('                 </svg><strong > H. Cierre:  </strong>'+msj[i].cierre+'</li>');
+						resultado += ('                 </svg><strong > H. Cierre:  </strong>'+msj[i].cierre+' Hrs.</li>');
 						resultado += ('               </ol>');
 						resultado += ('           </div>');
 						resultado += ('          <div class="card-footer bg-transparent border-0 ">');
@@ -159,7 +160,7 @@ function comboestados()
 					resultado += ('	<option value="0">Seleccione un estado</option>');
 
 				   for (var i in msj) {
-						resultado += ('	<option value="'+msj[i].estado+' "> '+msj[i].estado+' </option>');
+						resultado += ('	<option value="'+msj[i].estado+'"> '+msj[i].estado+' </option>');
 					}
 				}else{
 				
@@ -169,6 +170,51 @@ function comboestados()
 				resultado += ('	</select>');
 
 					$('#combpestado').html(resultado);
+				  
+			  },
+			  error:function(XMLHttpRequest, textStatus, errorThrown){
+				  console.log(arguments);
+				  var error;
+				  if (XMLHttpRequest.status === 404) error="Pagina no existe"+XMLHttpRequest.status;// display some page not found error 
+				  if (XMLHttpRequest.status === 500) error="Error del Servidor"+XMLHttpRequest.status; // display some server error 
+				  $("#contenedor-clientes").html('<div class="alert_error"></div>');
+				  $('.alert_error').hide(0).html('Ha ocurrido un error durante la ejecución'+error);
+				
+				  //OcultarDiv('mensajes');							  
+			  }
+		  });
+		}
+
+function combopueblo()
+{
+
+	var resultado ="";
+
+	$.ajax({
+			  type: 'POST',
+			  url: 'pueblos.php',
+			  dataType: "json",
+			  cache:false,
+			  success:function(msj){
+				  console.log(msj);
+
+				  if(msj.length>0){
+
+					resultado += ('<label>PUEBLO MAGICO:</label>');
+					resultado += ('	<select name="v_pueblo" id="v_pueblo" class="form-control">');
+					resultado += ('	<option value="0">Seleccione un pueblo magico</option>');
+
+				   for (var i in msj) {
+						resultado += ('	<option value="'+msj[i].nombre+'"> '+msj[i].nombre+' </option>');
+					}
+				}else{
+				
+						resultado += ('	<option value="null "> PUEBLOS MAGICOS NO ENCONTRADOS </option>');
+						
+				}
+				resultado += ('	</select>');
+
+					$('#combopueblo').html(resultado);
 				  
 			  },
 			  error:function(XMLHttpRequest, textStatus, errorThrown){

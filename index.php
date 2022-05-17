@@ -336,19 +336,22 @@ $db= new MySQL();
 	  
 	   </div>
 	   <div class="col-md-4">
-					<div class="form-group" id="combotipo">
-						<label>TIPO:</label>
+					<div class="form-group" id="combopueblo">
+						<label>PUEBLO MAGICO:</label>
 						<select name="v_tipo" id="v_tipo" class="form-control">
-							<option value="0">Seleccione un tipo</option>
+							<option value="0">Seleccione un pueblo</option>
 									<option value=" "></option>
 						</select>
 						
 					</div>
 		   </div>
 		   <div class="col-md-4">
-					<div class="form-group">
-						<label>NOMBRE:</label>
-						<input class="form-control" type="text" id="v_nombre" name="v_nombre">
+					<div class="form-group" id="combotipo">
+						<label>TIPO:</label>
+						<select name="v_tipo" id="v_tipo" class="form-control">
+							<option value="0">Seleccione un tipo</option>
+									<option value=" "></option>
+						</select>
 					</div>
 			   </div>
 	</div>
@@ -495,6 +498,7 @@ $db= new MySQL();
 	<script>
 		buscar('filtro');
 		comboestados();
+		combopueblo();
 		combotipo();
 	</script>
 

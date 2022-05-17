@@ -12,6 +12,7 @@ try
 	
 	$id = (isset($_POST['id']))? $_POST['id'] : "";
 	$v_estado = (isset($_POST['v_estado']))? $_POST['v_estado'] : "0";
+	$v_pueblo = (isset($_POST['v_pueblo']))? $_POST['v_pueblo'] : "0";
 	$v_tipo = (isset($_POST['v_tipo']))? $_POST['v_tipo'] : "0";
 	$v_nombre = (isset($_POST['v_nombre']))? $_POST['v_nombre'] : "";
 	
@@ -19,6 +20,7 @@ try
 	
 	$query .= ($id != '') ? " and os.idpueblomagico=$id ":" ";
 	$query .= ($v_estado != '0') ? " and pm.estado like '$v_estado' ":" ";
+	$query .= ($v_pueblo != '0') ? " and pm.nombre like '$v_pueblo' ":" ";
 	$query .= ($v_tipo != '0') ? " and t.idtipo=$v_tipo ":" ";
 	$query .= ($v_nombre != '') ? " and os.nombre like '$v_nombre' ":" ";
 	
