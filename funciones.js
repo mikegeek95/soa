@@ -56,7 +56,7 @@ function buscar(formulario)
 	
 	$.ajax({
 			  type: 'POST',
-			  url: 'servicio.php',
+			  url: 'soalo.x10.mx/servicio.php',
 			  dataType: "json",
 			  data: cadena,
 			  cache:false,
@@ -67,17 +67,11 @@ function buscar(formulario)
 
 				   for (var i in msj) {
 
-
-
-						//resultado += ('       <p><b>Apertura: </b>'+msj[i].apertura+'</p>');
-						//resultado += ('       <p><b>Cierre:</b> '+msj[i].cierre+'</p>');
-
-
 						resultado += (' <div class="col-12 ">');
 						resultado += ('       <div class="card border-0 padding-5" style="border: 5px solid red;" >');
 						resultado += ('         <div class="row g-0">');
 						resultado += ('           <div class="col-md-4">');
-						resultado += ('             <img src="assets/img/lo/'+msj[i].IdLugarOcio+'.jpg" class="img-fluid img-thumbnail" alt="...">');
+						resultado += ('             <img src="soalo.x10.mx/assets/img/lo/'+msj[i].IdLugarOcio+'.jpg" class="img-fluid img-thumbnail" alt="...">');
 						resultado += ('          </div>');
 						resultado += ('         <div class="col-md-8">');
 						resultado += ('           <div class="card-body b-0">');
@@ -146,8 +140,7 @@ function comboestados()
 	var resultado ="";
 
 	$.ajax({
-			  type: 'POST',
-			  url: 'estados.php',
+			  url: 'soalo.x10.mx/estados.php',
 			  dataType: "json",
 			  cache:false,
 			  success:function(msj){
@@ -191,8 +184,7 @@ function combopueblo()
 	var resultado ="";
 
 	$.ajax({
-			  type: 'POST',
-			  url: 'pueblos.php',
+			  url: 'soalo.x10.mx/pueblos.php',
 			  dataType: "json",
 			  cache:false,
 			  success:function(msj){
@@ -236,8 +228,7 @@ function combotipo()
 	var resultado ="";
 
 	$.ajax({
-			  type: 'POST',
-			  url: 'tipo.php',
+			  url: 'soalo.x10.mx/tipo.php',
 			  dataType: "json",
 			  cache:false,
 			  success:function(msj){

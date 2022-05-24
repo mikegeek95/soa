@@ -22,7 +22,7 @@ try
 	$query .= ($v_estado != '0') ? " and pm.estado like '$v_estado' ":" ";
 	$query .= ($v_pueblo != '0') ? " and pm.nombre like '$v_pueblo' ":" ";
 	$query .= ($v_tipo != '0') ? " and t.idtipo=$v_tipo ":" ";
-	$query .= ($v_nombre != '') ? " and os.nombre like '$v_nombre' ":" ";
+	$query .= ($v_nombre != '') ? " and os.nombre like '%$v_nombre%' ":" ";
 	
 
 	
